@@ -26,7 +26,7 @@ spring:
           predicates:
             - Path=/service-provider/**
           filters:
-            - StripPrefix=1               #表明前缀/provider1需要截取掉nacos:
+            - StripPrefix=1               # StripPrefix过滤器是去掉一个路径前缀
 
 # 日志配置文件
 logging:

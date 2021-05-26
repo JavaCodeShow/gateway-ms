@@ -35,12 +35,6 @@
 
     <dependencies>
 
-        <!--        &lt;!&ndash; spring-boot-starter-web (spring-webmvc + tomcat) &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
-        <!--        </dependency>-->
-
         <!-- gateway网关 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -52,6 +46,13 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>2.2.0.RELEASE</version>
+        </dependency>
+
+        <!-- 自定义的工具类 -->
+        <dependency>
+            <groupId>com.jf</groupId>
+            <artifactId>jf-common-utils</artifactId>
+            <version>1.0</version>
         </dependency>
 
         <!-- 健康检查 -->
