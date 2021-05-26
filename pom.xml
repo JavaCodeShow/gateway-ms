@@ -34,12 +34,14 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- spring-boot-starter-web (spring-webmvc + tomcat) -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
+        <!--        &lt;!&ndash; spring-boot-starter-web (spring-webmvc + tomcat) &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
+        <!--        </dependency>-->
+
+        <!-- gateway网关 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>

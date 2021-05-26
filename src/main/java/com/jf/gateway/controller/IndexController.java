@@ -8,7 +8,7 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "xxl job executor running.";
+		return "gateway-ms is running.";
 	}
 
 }
