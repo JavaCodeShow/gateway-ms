@@ -21,10 +21,10 @@ spring:
 
     gateway: # config the routes for gateway
       routes:
-        - id: service-provider          #将/provider1/开头的请求转发到provider1
+        - id: service-provider          #将/service-provider/开头的请求转发到service-provider
           uri: lb://service-provider
           predicates:
-            - Path=/provider1/**
+            - Path=/service-provider/**
           filters:
             - StripPrefix=1               #表明前缀/provider1需要截取掉nacos:
 
