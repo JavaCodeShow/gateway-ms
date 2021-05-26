@@ -1,5 +1,13 @@
 package com.jf.gateway.filter;
 
+/**
+ * 描述:
+ *
+ * @author: 江峰
+ * @create: 2021-05-26 17:05
+ * @since: 2.20.1.1
+ */
+
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -10,30 +18,21 @@ import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
 /**
- * 描述: 权限校验过滤器
- *
- * @author: 江峰
- * @create: 2021-05-26 17:43
- * @since: 2.20.1.1
+ * 可进行日志打印，鉴权等
  */
-@Component
 @Slf4j
-public class AuthFilter implements GlobalFilter, Ordered {
+@Component
+public class CustomGlobalFilter implements GlobalFilter, Ordered {
 
 	@Override
 	public Mono<Void> filter(ServerWebExchange exchange,
 			GatewayFilterChain chain) {
-		String token = exchange.getRequest().getHeaders().getFirst("token");
-
-		log.info("token = [{}]", token);
-
-		// if ("token".equals(token)) {
+		log.info("custom global filter");
 		return chain.filter(exchange);
-		// }
 	}
 
 	@Override
 	public int getOrder() {
-		return -1;
+		return 0;
 	}
 }
