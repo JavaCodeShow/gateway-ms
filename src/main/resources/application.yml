@@ -1,15 +1,6 @@
 server:
   port: 8082
 
-#\u96EA\u82B1\u7B97\u6CD5\u7684 \u6570\u636E\u4E2D\u5FC3\u6807\u8BC6ID \u548C \u673A\u5668\u8FDB\u7A0B\u6807\u8BC6ID \u4F5C\u4E3A\u8054\u5408\u952E\u5168\u5C40\u552F\u4E00
-snow:
-  flake:
-    datacenterId: 1
-    machineId: 1
-
-
-# \u76D1\u63A7\u76F8\u5173\u914D\u7F6E
-# \u5F00\u542F\u76D1\u63A7
 management:
   endpoints:
     web:
@@ -21,13 +12,21 @@ spring:
     active: dev
 
   application:
-    name: distribute-id-ms
+    name: gateway-ms
   cloud:
     nacos:
       discovery:
         namespace: dev
         server-addr: localhost:8848
 
+    gateway: # config the routes for gateway
+      routes:
+        - id: service-provider          #将/provider1/开头的请求转发到provider1
+          uri: lb://service-provider
+          predicates:
+            - Path=/provider1/**
+          filters:
+            - StripPrefix=1               #表明前缀/provider1需要截取掉nacos:
 
 # 日志配置文件
 logging:

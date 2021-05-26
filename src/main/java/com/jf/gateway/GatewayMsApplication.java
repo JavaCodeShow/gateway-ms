@@ -1,4 +1,8 @@
-package com.jf.gateway.controller;
+package com.jf.gateway;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 描述:
@@ -7,5 +11,10 @@ package com.jf.gateway.controller;
  * @create: 2021-05-26 16:07
  * @since: 2.20.1.1
  */
-public class GatewayApplication {
+@SpringBootApplication
+@EnableDiscoveryClient
+public class GatewayMsApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(GatewayMsApplication.class, args);
+	}
 }
